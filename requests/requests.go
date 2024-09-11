@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net"
 	"net/http"
 	"time"
@@ -321,6 +322,8 @@ func CheckTasks(token string) {
 					} else {
 						fmt.Printf("[Task %s | Reward: %v] %s\n", taskStatus, subTaskMap["reward"], taskTitle)
 					}
+					delay := time.Duration(rand.Intn(5000)) * time.Millisecond
+					time.Sleep(delay)
 				}
 			}
 		}

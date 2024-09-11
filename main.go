@@ -57,7 +57,7 @@ func mainLoop(queryList []string) {
 	nowTime := time.Now()
 	nextTrigger := time.Now()
 	if nextTrigger.Before(nowTime) {
-		nextTrigger = nextTrigger.Add(2 * time.Hour)
+		nextTrigger = nextTrigger.Add(5 * time.Hour)
 	}
 
 	for { // start infinite loop
@@ -107,7 +107,7 @@ func mainLoop(queryList []string) {
 
 			nextFarmingTime, _ := utils.TimeLeft(balanceInfo.Farming.EndTime)
 
-			if balanceInfo.Farming.Balance != "57.6" {
+			if balanceInfo.Farming.Balance != "63.36" {
 				printText += fmt.Sprintf("["+bold(cyan("Farming"))+"] "+"next claim %v remaining", nextFarmingTime)
 				printText += fmt.Sprintf(" | Earned: %v\n", balanceInfo.Farming.Balance)
 			} else {
@@ -228,7 +228,7 @@ func mainLoop(queryList []string) {
 					}
 				}
 			}
-			nextTrigger = nextTrigger.Add(2 * time.Hour)
+			nextTrigger = nextTrigger.Add(5 * time.Hour)
 		}
 
 		if initStage {
