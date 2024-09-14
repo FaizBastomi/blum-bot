@@ -89,7 +89,7 @@ func GetNewToken(queryID string) (string, error) {
 }
 
 func GetUserInfo(token string, queryID string) (map[string]any, error) {
-	url := "https://gateway.blum.codes/v1/user/me"
+	url := "https://user-domain.blum.codes/api/v1/user/me"
 	headers := getHeaders
 	headers["Authorization"] = "Bearer " + token
 
@@ -237,7 +237,7 @@ func CheckDailyReward(token string) (map[string]any, error) {
 }
 
 func CheckTasks(token string) {
-	url := "https://game-domain.blum.codes/api/v1/tasks"
+	url := "https://earn-domain.blum.codes/api/v1/tasks"
 
 	// Assuming getHeaders is a function, invoke it.
 	headers := getHeaders
@@ -331,7 +331,7 @@ func CheckTasks(token string) {
 }
 
 func startTask(token, taskID, taskTitle string) {
-	url := "https://game-domain.blum.codes/api/v1/tasks/" + taskID + "/start"
+	url := "https://earn-domain.blum.codes/api/v1/tasks/" + taskID + "/start"
 	headers := getHeaders
 	headers["Authorization"] = "Bearer " + token
 	headers["content-length"] = "0"
@@ -368,7 +368,7 @@ func startTask(token, taskID, taskTitle string) {
 }
 
 func claimTask(token, taskID, taskTitle string) {
-	url := "https://game-domain.blum.codes/api/v1/tasks/" + taskID + "/claim"
+	url := "https://earn-domain.blum.codes/api/v1/tasks/" + taskID + "/claim"
 	headers := getHeaders
 	headers["Authorization"] = "Bearer " + token
 	headers["content-length"] = "0"

@@ -74,7 +74,6 @@ func mainLoop(queryList []string) {
 				tokenMap[queryID] = newToken
 			}
 			token := tokenMap[queryID]
-
 			// fetching user info
 			userInfo, err := requests.GetUserInfo(token, queryID)
 			if err != nil {
