@@ -518,7 +518,7 @@ func ClaimGame(token, gameID, queryID string, points int) {
 }
 
 func CheckBalanceFriend(token string) (types.FriendsBalance, error) {
-	url := "https://gateway.blum.codes/v1/friends/balance"
+	url := "https://user-domain.blum.codes/api/v1/friends/balance"
 	headers := map[string]string{
 		"Authorization":      "Bearer " + token,
 		"accept":             "application/json, text/plain, */*",
@@ -563,7 +563,7 @@ func CheckBalanceFriend(token string) (types.FriendsBalance, error) {
 }
 
 func ClaimBalanceFriend(token string) (bool, error) {
-	url := "https://gateway.blum.codes/v1/friends/claim"
+	url := "https://user-domain.blum.codes/api/v1/friends/claim"
 	headers := map[string]string{
 		"Authorization":      "Bearer " + token,
 		"accept":             "application/json, text/plain, */*",

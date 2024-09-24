@@ -14,8 +14,8 @@ type UserBalance struct {
 
 // FriendsBalance represents the response from the '/v1/friends/balance' endpoint.
 type FriendsBalance struct {
-	LimitInvitation             string  `json:"limitInvitation"`
-	UsedInvitation              string  `json:"usedInvitation"`
+	LimitInvitation             int     `json:"limitInvitation"`
+	UsedInvitation              int     `json:"usedInvitation"`
 	AmountForClaim              string  `json:"amountForClaim"`
 	ReferralToken               string  `json:"referralToken"`
 	PercentFromFriends          int     `json:"percentFromFriends"`
